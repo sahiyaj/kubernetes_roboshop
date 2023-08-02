@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: momgodb
+  name: mongodb
   labels:
-    name: momgodb
+    name: mongodb
     tier: db
 spec:
   containers:
   - name: web
     imagePullPolicy: Always
-    image: sahiya/momgodb:k8
+    image: sahiya/mongodb:k8
     resources:
       requests:
         cpu: "100m"
@@ -24,10 +24,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: momgodb-service
+  name: mongodb-service
 spec:
   selector:
-    name: momgodb
+    name: mongodb
     tier: db
   ports:
    - protocol: TCP
