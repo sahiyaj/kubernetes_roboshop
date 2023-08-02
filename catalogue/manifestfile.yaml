@@ -10,7 +10,7 @@ spec:
   containers:
   - name: cataloue
     imagePullPolicy: Always
-    image: sahiya/cataloue:v2
+    image: sahiya/cataloue:k8
     resources:
       requests:
         cpu: "100m"
