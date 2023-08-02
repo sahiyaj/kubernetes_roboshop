@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: cataloue
+  name: catalogue
   labels:
-    name: cataloue
+    name: catalogue
     tier: app
 spec:
   containers:
-  - name: cataloue
+  - name: catalogue
     imagePullPolicy: Always
-    image: sahiya/cataloue:k8
+    image: sahiya/catalogue:k8
     resources:
       requests:
         cpu: "100m"
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cataloue-service
+  name: catalogue-service
 spec:
   selector:
-    name: cataloue
+    name: catalogue
     tier: app
   ports:
    - protocol: TCP
