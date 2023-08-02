@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cataloue
+  labels:
+    name: cataloue
+    tier: app
+spec:
+  containers:
+  - name: cataloue
+    imagePullPolicy: Always
+    image: sahiya/cataloue:v2
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "128m"  
+        memory: "156Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cataloue-service
+spec:
+  selector:
+    name: cataloue
+    tier: app
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 8080
