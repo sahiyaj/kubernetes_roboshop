@@ -9,7 +9,7 @@ spec:
   containers:
   - name: catalogue
     imagePullPolicy: Always
-    image: sahiya/catalogue:v2
+    image: sahiya/catalogue:k8
     resources:
       requests:
         cpu: "100m"
@@ -28,7 +28,7 @@ spec:
     tire: app
   ports:
    - protocol: TCP
-     port: 8080
-     targetPort: 8080
+     port: 80
+     targetPort: 27017
  
 
