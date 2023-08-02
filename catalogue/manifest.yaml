@@ -9,7 +9,7 @@ spec:
   containers:
   - name: catalogue
     imagePullPolicy: Always
-    image: sahiya/catalogue:k81
+    image: sahiya/catalogue:k8
     resources:
       requests:
         cpu: "100m"
