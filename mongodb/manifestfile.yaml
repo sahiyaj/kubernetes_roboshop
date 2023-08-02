@@ -8,9 +8,9 @@ metadata:
     tier: db
 spec:
   containers:
-  - name: mongodb
+  - name: web
     imagePullPolicy: Always
-    image: sahiya/mongodb:v2
+    image: sahiya/mongodb:k8
     resources:
       requests:
         cpu: "100m"
