@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: momgodb
+  labels:
+    name: momgodb
+    tier: db
+spec:
+  containers:
+  - name: web
+    imagePullPolicy: Always
+    image: sahiya/momgodb:k8
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "128m"  
+        memory: "156Mi"
+    ports:
+      - containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: momgodb-service
+spec:
+  selector:
+    name: momgodb
+    tier: db
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 27017
