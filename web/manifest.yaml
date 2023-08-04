@@ -17,18 +17,7 @@ spec:
         memory: "128Mi"
       limits:
         cpu: "128m"  
-        memory: "156Mi"
-    livenessProbe:
-      httpGet:
-        path: /
-        port: 80
-      initialDelaySeconds: 5
-      periodSeconds: 10
-    readinessProbe:
-      tcpSocket:
-        port: 80
-      initialDelaySeconds: 5
-      periodSeconds: 10      
+        memory: "156Mi"   
     ports:
       - containerPort: 80
 ---
