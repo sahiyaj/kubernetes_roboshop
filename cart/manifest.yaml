@@ -21,14 +21,7 @@ spec:
     image: sahiya/cart:k8
     envFrom:
     - configMapRef:
-        name: cart-config
-    resources:
-      requests:
-        cpu: "100m"
-        memory: "128Mi"
-      limits:
-        cpu: "100m"
-        memory: "128Mi"
+        name: cart-config   
 ---
 apiVersion: v1
 kind: Service
