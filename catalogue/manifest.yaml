@@ -20,7 +20,7 @@ spec:
     image: sahiya/catalogue:k8
     envFrom:
     - configMapRef:
-       name: catalogue-config
+        name: catalogue-config
     resources:
       requests:
         cpu: "100m"
