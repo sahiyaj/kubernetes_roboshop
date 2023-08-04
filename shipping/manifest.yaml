@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shipping-config
+data:
+  DB_HOST: "mysql"
+  CART_ENDPOINT: "cart"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shipping
+  labels:
+    name: shipping
+    tier: app
+spec:
+  containers:
+  - name: cart
+    imagePullPolicy: Always
+    image: sahiya/shipping:k8
+    envFrom:
+    - configMapRef:
+        name: shipping-config   
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping
+spec:
+  selector:
+    name: shipping
+    tier: app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
